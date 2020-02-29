@@ -52,7 +52,7 @@ app.post('/customer', function (req, res) {
 });
 
 app.put('/customer', function (req, res) {
-   connection.query('UPDATE `customer` SET `Nom`=?,`Prenom`=? where `Id`=?', [req.body.Name,req.body.Address, req.body.Country, req.body.Phone, req.body.Id], function (error, results, fields) {
+   connection.query('UPDATE `customer` SET `Nom`=?,`Prenom`=? where `Id`=?', [req.body.Nom,req.body.Prenom, req.body.Phone, req.body.Id], function (error, results, fields) {
 	  if (error) throw error;
 	  res.end(JSON.stringify(results));
 	});
